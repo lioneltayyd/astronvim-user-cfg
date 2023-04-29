@@ -18,5 +18,8 @@ ENV PATH="$PATH:$HOME/.cargo/env"
 # Clone NeoVim pre-built config.
 RUN git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
 
+# Overwrite files inside (~/.config/nvim)
+COPY nvim/.stylua.toml ~/.config/nvim/.stylua.toml
+
 # Clone NeoVim user custom config.
-RUN git clone https://github.com/lioneltayyd/astrovim_user_cfg ~/.config/nvim/lua/user
+RUN git clone git@github.com:lioneltayyd/astrovim_user_cfg.git ~/.config/nvim/lua
