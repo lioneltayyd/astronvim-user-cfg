@@ -1,0 +1,6 @@
+# Caches.
+.DS_Store
+*.code-workspace
+
+# Unwanted folders / files.
+nvim
