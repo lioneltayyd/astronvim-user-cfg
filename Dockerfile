@@ -1,9 +1,5 @@
 FROM alpine:edge
 
-# [Optional] Uncomment this section to install additional packages.
-# RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-#     && apt-get -y install --no-install-recommends <your-package-list-here>
-
 # =============================================
 # For NeoVim
 # =============================================
@@ -25,6 +21,6 @@ COPY user/.stylua.toml ~/.config/nvim/.stylua.toml
 
 # Clone NeoVim user custom config.
 RUN mkdir -p ~/.config/nvim/lua/user \
-    && git clone https://github.com/lioneltayyd/astrovim_user_cfg.git ~/nvim_user_cfg \
+    && git clone https://github.com/lioneltayyd/astrovim-user-cfg.git ~/nvim_user_cfg \
     && mv ~/nvim_user_cfg/user/* ~/.config/nvim/lua/user \
     && rm -R ~/nvim_user_cfg
