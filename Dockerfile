@@ -6,14 +6,17 @@ FROM alpine:edge
 
 USER root
 
-# Relevant packages.
+# Install relevant packages.
 RUN apk add alpine-sdk bash lua go python3 git lazygit bottom neovim ripgrep curl gcc tree --update
 
-# # Install Rust.
+# Install Rust.
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-ENV PATH="$PATH:$HOME/.cargo/env"
+ENV PATH="$PATH:/root/.cargo/bin"
 
-# Clone NeoVim pre-built config.
+# Mason cannot install "rust-analyzer" in Alpine. Use this approach.
+RUN rustup component add rust-analyzer
+
+# Clone base Neovim config.
 RUN git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
 
 # Overwrite files inside (~/.config/nvim)

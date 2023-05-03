@@ -1,4 +1,4 @@
--- Available plugins can be found at https://github.com/ThePrimeagen/harpoon
+-- Reference: https://github.com/ThePrimeagen/harpoon
 
 return {
     "ThePrimeagen/harpoon",

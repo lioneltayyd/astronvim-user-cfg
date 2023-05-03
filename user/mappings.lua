@@ -9,9 +9,9 @@ return {
         -- Basic shorcuts.
         ["<C-s>"] = { ":w<cr>", desc = "Save File" },
         -- Refactor mappings.
-        ["<leader>r"] = { name = " Refactor" },
+        ["<leader>r"] = { name = "Refactor" },
         ["<leader>rr"] = { function() require("refactoring").select_refactor() end, desc = "Selection refactor" },
-        ["<leader>H"] = { name = " Harpoon" },
+        ["<leader>H"] = { name = "Harpoon" },
         ["<leader>Ha"] = { function() require("harpoon.mark").add_file() end, desc = "Add file to Harpoon menu" },
         ["<leader>Hu"] = { function() require("harpoon.ui").toggle_quick_menu() end, desc = "Toggle Harpoon menu" },
         ["<leader>Ht"] = { "<cmd>Telescope harpoon marks<cr>", desc = "Toggle Telescope Harpoon ui" },
@@ -19,7 +19,7 @@ return {
     -- Visual mode.
     v = {
         -- Refactor mappings.
-        ["<leader>r"] = { name = " Refactor" },
+        ["<leader>r"] = { name = "Refactor" },
         ["<leader>rr"] = { function() require("refactoring").select_refactor() end, desc = "Selection refactor" }
     }
 }
